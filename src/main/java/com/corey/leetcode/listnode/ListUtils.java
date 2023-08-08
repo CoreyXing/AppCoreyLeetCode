@@ -1,9 +1,5 @@
 package com.corey.leetcode.listnode;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 /**
  * @author I585034
  * @description: 链表工具类
@@ -11,12 +7,7 @@ import java.util.List;
  */
 public class ListUtils {
 
-    /**
-     * 数组返回列表
-     * @param nums 数组
-     * @return ListNode head;
-     */
-    public static ListNode createListFromArray(int[] nums){
+    public static ListNode createList(int[] nums){
         int i=0;
         ListNode pre = null;
         ListNode head = null;

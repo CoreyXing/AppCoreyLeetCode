@@ -1,7 +1,6 @@
 package com.corey.leetcode.array;
 
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
