@@ -29,7 +29,6 @@ public class BinarySearchArray {
     public static void main(String[] args) {
         //main method
         Scanner scanner = new Scanner(System.in);
-        ArrayList<Integer> list = new ArrayList<>();
         System.out.println("输入数组长度");
         int len = scanner.nextInt();
         System.out.println("输入有序数组值");
