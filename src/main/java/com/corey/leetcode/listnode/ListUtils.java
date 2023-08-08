@@ -104,12 +104,12 @@ public class ListUtils {
         return true;
     }
 
-    public static int getAtIndex(ListNode head,int index){
-        while(head ==  null){
+    public static int getAtIndex(ListNode head, int index) {
+        while (head == null) {
             return -1;//表示链表为空
         }
-        ListNode temp =head;
-        while (index>0){
+        ListNode temp = head;
+        while (index > 0) {
             temp = temp.next;
             index--;
         }
@@ -117,55 +117,55 @@ public class ListUtils {
     }
 
 
-    public static int getLengthOfListNode(ListNode head){
-        if (head == null){
+    public static int getLengthOfListNode(ListNode head) {
+        if (head == null) {
             return 0;
         }
-        int len=0;
+        int len = 0;
         ListNode temp = head;
-        while (temp != null){
-            temp=temp.next;
+        while (temp != null) {
+            temp = temp.next;
             len++;
         }
         return len;
     }
 
 
-    public static boolean removeAtIndexOfListNode(ListNode head,int value){
+    public static boolean removeAtIndexOfListNode(ListNode head, int value) {
 
-        if (head == null){
+        if (head == null) {
             return false;
         }
-        if (value==0){
-            head=head.next;
+        if (value == 0) {
+            head = head.next;
             return true;
         }
         ListNode temp = head.next;
-        ListNode pre =head;
+        ListNode pre = head;
         int res = 0;
-        if(value>getLengthOfListNode(head)){
+        if (value > getLengthOfListNode(head)) {
             return false;//不可能移除比链表长的元素
         }
-        while(value>0){
-            pre=temp;
-            temp=temp.next;
+        while (value > 0) {
+            pre = temp;
+            temp = temp.next;
             value--;
         }
-        pre.next= temp.next;
+        pre.next = temp.next;
         return true;
     }
 
 
     public static ListNode getTailValueOfListNode(ListNode head) {
-        if (head == null){
+        if (head == null) {
             return null;//链表为空
         }
         ListNode temp = head;
-        ListNode pre=temp;
-        temp=temp.next;
-        while(temp != null){
+        ListNode pre = temp;
+        temp = temp.next;
+        while (temp != null) {
             pre = temp;
-            temp=temp.next;
+            temp = temp.next;
         }
         return pre;
     }
