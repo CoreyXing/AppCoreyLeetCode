@@ -21,4 +21,24 @@ public class ListUtils {
         }
         return  head;
     }
+
+    public static int[] listNode2Array(ListNode head){
+        // 首先计算链表的长度
+        int length = 0;
+        ListNode current = head;
+        while (current != null) {
+            length++;
+            current = current.next;
+        }
+        // 创建一个与链表长度相同的数组
+        int[] arr = new int[length];
+        // 将链表元素存储到数组中
+        current = head;
+        int index = 0;
+        while (current != null) {
+            arr[index++] = current.val;
+            current = current.next;
+        }
+        return arr;
+    }
 }
