@@ -25,6 +25,6 @@ public class ListNode {
         return "Node" + this.val;
     }
 
-
-
+    public ListNode() {
+    }
 }

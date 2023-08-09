@@ -7,27 +7,27 @@ package com.corey.leetcode.listnode;
  */
 public class ReverseListNode {
 
-    private static void reverseListNode(ListNode head){
-        if (head == null){
-            return ;
+    //todo 为啥需要return
+    private static ListNode reverseListNode(ListNode head) {
+        if (head == null) {
+            return null ;
         }
         ListNode temp = head;
-        ListNode pre=null;
-        while(temp != null){
-            ListNode tempNext=temp.next;
-            temp.next=pre;
-            pre=temp;
+        ListNode pre = null;
+        while (temp != null) {
+            ListNode tempNext = temp.next;
+            temp.next = pre;
+            pre = temp;
             temp = tempNext;
         }
-        head = pre;
-
+        return pre;
     }
 
     public static void main(String[] args) {
 
         ListNode listNode = ListUtils.createList(new int[]{1, 2, 4, 6, 7});
         ListUtils.printListNode(listNode);
-        reverseListNode(listNode);
+        listNode=reverseListNode(listNode);
         ListUtils.printListNode(listNode);
     }
 

@@ -9,18 +9,19 @@ package com.corey.leetcode.listnode;
 public class ListUtils {
 
     public static ListNode createList(int[] nums) {
-        int i = 0;
-        ListNode pre = null;
-        ListNode head = null;
-        while (i < nums.length) {
-            ListNode temp = new ListNode(nums[i]);
-            if (pre != null) {
-                pre.next = temp;
-                head = temp;
-            }
-            pre = temp;
+        if (nums.length == 0){
+            return null;
         }
-        return head;
+        int i = 0;
+        ListNode head = new ListNode();
+        ListNode temp=head;
+        while (i < nums.length) {
+            ListNode node = new ListNode(nums[i]);
+            temp.next = node;
+            temp = node;
+            i++;
+        }
+        return head.next;
     }
 
     /**
@@ -176,7 +177,9 @@ public class ListUtils {
         ListNode temp = head;
         while (temp != null){
             System.out.print(temp.val+" ");
+            temp = temp.next;
         }
+        System.out.println();
     }
 
 }
