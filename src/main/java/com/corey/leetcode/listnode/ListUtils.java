@@ -1,6 +1,5 @@
 package com.corey.leetcode.listnode;
 
-import java.util.List;
 
 /**
  * @author I585034
@@ -169,4 +168,15 @@ public class ListUtils {
         }
         return pre;
     }
+
+    public static void printListNode(ListNode head){
+        if (head == null){
+            return ;
+        }
+        ListNode temp = head;
+        while (temp != null){
+            System.out.print(temp.val+" ");
+        }
+    }
+
 }
