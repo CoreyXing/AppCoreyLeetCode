@@ -23,6 +23,18 @@ public class ReverseListNode {
         return pre;
     }
 
+    public static ListNode reverseListNodeRecursion(ListNode head){
+        if (head == null){
+            return null;
+        }
+        //todo
+        return head;
+    }
+
+
+
+
+
     public static void main(String[] args) {
 
         ListNode listNode = ListUtils.createList(new int[]{1, 2, 4, 6, 7});
