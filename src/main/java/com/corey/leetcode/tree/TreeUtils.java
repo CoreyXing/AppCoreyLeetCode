@@ -77,5 +77,74 @@ public class TreeUtils {
         return root;
     }
 
+    /*
+     * @description:
+            * @params: node
+            * @return: null
+            * @author: xingweicheng
+            * @dateTime: 2023/8/10 23:15
+            * 二叉树的层序遍历
+     */
+
+    public static  void levelOrder(Tree node,TraversalOperate operate){
+        if (node == null){
+            return;
+        }
+        Queue<Tree> queue = new LinkedList<>();
+        queue.offer(node);
+        while(!queue.isEmpty()){
+            Tree temp = queue.poll();
+            operate.operate(temp);
+            if (temp.left != null){
+                queue.offer(temp.left);
+            }
+            if (temp.right != null){
+                queue.offer(temp.right);
+            }
+        }
+    }
+
+    /*
+     * @description:
+            * @params:
+            * @return: null
+            * @author: xingweicheng
+            * @dateTime: 2023/8/10 23:16
+     */
+    public static void invertTree(Tree node){
+        if (node == null){
+            return;
+        }
+        invertTree(node.left);
+        invertTree(node.right);
+        swapChildren(node);
+    }
+
+    private static void swapChildren(Tree root) {
+        Tree tmp = root.left;
+        root.left = root.right;
+        root.right = tmp;
+    }
+
+
+
+
+    public static void main(String[] args) {
+        Tree<Integer> root = createTree(new Integer[]{1,null,5,7,9,11});
+        firstOrderTraversalRecursion(root, new TraversalOperate() {
+            @Override
+            public void operate(Tree node) {
+                System.out.println(node);
+            }
+        });
+
+        levelOrder(root, new TraversalOperate() {
+            @Override
+            public void operate(Tree node) {
+                System.out.println(node);
+            }
+        });
+    }
+
 
 }
